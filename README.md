@@ -27,7 +27,7 @@ Use Data/Set action to create the object.
 ## Step 3. Slack API Call
 ### Communication/HTTP-request
 #### Properties:
-> * _url_: NOTE: Paste the slack webhook created from step 2.
+> * _url_: NOTE: Paste the slack webhook
 > * _Method_: POST
 > * _Body_: Contents of what is being posted to slack. NOTE: May need to specify the content type as application json.  { “Content-Type”: “Application/JSON” }
 > * _Header_: blank
