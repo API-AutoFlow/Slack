@@ -1,10 +1,8 @@
+# Summary
+Integration with slack can be used to send alerts to users and channels to notify when certain events are triggered.
+
 # API AutoFlow Version:
 Configuration config.json was created using AutoFlow version __0.2.5__
-
-
-# Slack Webhook integration
-
-Integration with slack can be used to send alerts to users and channels to notify when certain events are triggered.
 
 ## Step 1. Create flow
 * Create an HTTP Server
