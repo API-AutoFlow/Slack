@@ -45,6 +45,9 @@ Use Data/Set action to create the object.
 Select Method Post and Paste your slack http server. NOTE: Yours may differ
 ![Image](https://github.com/API-AutoFlow/slack-webhook/blob/master/img/4.gif)
 
+or use Postman
+![Image](https://github.com/API-AutoFlow/slack-webhook/blob/master/img/5.png)
+
 In the HTTP Request Header, insert the message you want to send. For example
 
 > Hello World!
