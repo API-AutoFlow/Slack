@@ -4,6 +4,11 @@ Integration with slack can be used to send alerts to users and channels to notif
 # API AutoFlow Version:
 Configuration config.json was created using AutoFlow version __0.2.5__
 
+# Need help?
+Is you have questions about this example, feel free to post your question on the community "Ask Questions" website.
+
+[Ask Questions](https://interactor.com/autoflow/questions){: .btn}
+
 ## Step 1. Create flow
 * Create an HTTP Server
 * Create an endpoint
