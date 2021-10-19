@@ -1,6 +1,6 @@
 {
   "$product": {
-    "deployment_mode": "SOLO",
+    "deployment_mode": "SAAS",
     "name": "API AutoFlow",
     "version": "2.1.15"
   },
@@ -9,8 +9,34 @@
       "default-test": "3a0efb0a-4f35-41c7-9514-79edeb18bb2c",
       "flow": [
         {
+          "$action": "string/join",
+          "array": [
+            "{\"text\": \"",
+            {
+              "__$afref__": "data",
+              "path": [
+                "request",
+                "body"
+              ]
+            },
+            "\"}"
+          ],
+          "output-location": {
+            "__$afref__": "data",
+            "path": [
+              "message"
+            ]
+          },
+          "separator": ""
+        },
+        {
           "$action": "communication/http-request",
-          "body": "{\"text\": \"test\"}",
+          "body": {
+            "__$afref__": "data",
+            "path": [
+              "message"
+            ]
+          },
           "header": {},
           "method": "POST",
           "mock-result": {
@@ -21,7 +47,8 @@
           "output-location": {
             "__$afref__": "data",
             "path": [
-              "result"
+              "response",
+              "body"
             ]
           },
           "path": "",
@@ -30,17 +57,6 @@
           "url": "https://hooks.slack.com/services/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",
           "url-variables": {},
           "use-mock-result": false
-        },
-        {
-          "$action": "data/set",
-          "at-location": {
-            "__$afref__": "data",
-            "path": [
-              "response",
-              "body"
-            ]
-          },
-          "value": "result"
         }
       ],
       "id": "262b9a4f-993c-45c3-82d2-f0850ee9162b"
@@ -62,7 +78,7 @@
       "methods": [
         "POST"
       ],
-      "path": "/slack-sapi",
+      "path": "/api/training-channel",
       "type": "endpoint"
     }
   ],
@@ -82,18 +98,21 @@
       "id": "4fdb7d43-9e6b-49f1-a5cd-fb213a6b0e36",
       "parentId": null,
       "resourceType": "Inbound",
-      "title": "http_server"
+      "title": "slack"
     },
     {
       "id": "513ccfec-2d21-4d54-8fbb-443ffa4c0027",
       "parentId": "4fdb7d43-9e6b-49f1-a5cd-fb213a6b0e36",
       "resourceType": "InboundEndpoint",
-      "title": "Slack"
+      "title": "Webhook"
     }
   ],
   "Test": [
     {
-      "id": "3a0efb0a-4f35-41c7-9514-79edeb18bb2c"
+      "id": "3a0efb0a-4f35-41c7-9514-79edeb18bb2c",
+      "value": {
+        "body": "Test Message"
+      }
     }
   ]
 }
